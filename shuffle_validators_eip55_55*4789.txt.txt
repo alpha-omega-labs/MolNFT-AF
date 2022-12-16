@@ -1,0 +1,18 @@
+#!/bin/bash
+#Simple bash script to additionally shuffle randomized list of addresses
+csplit validators_eip55_55*4789.txt.txt 234455
+cat xx01 xx00 > step1_shuffle.txt
+rm -r xx01 xx00
+csplit step1_shuffle.txt 222222
+cat xx01 xx00 > step2_shuffle.txt
+rm -r xx01 xx00
+csplit step2_shuffle.txt NUMBER_HERE
+cat xx01 xx00 > step3_shuffle.txt
+rm -r xx01 xx00
+csplit step3_shuffle.txt NUMBER_HERE
+cat xx01 xx00 > step4_shuffle.txt
+rm -r xx01 xx00
+csplit step4_shuffle.txt NUMBER_HERE
+cat xx01 xx00 > step5_shuffle.txt
+awk 'NF' step5_shuffle.txt > validators_eip55_55*4789_shuffle.txt
+rm -r xx01 xx00 step1_shuffle.txt step2_shuffle.txt step3_shuffle.txt step4_shuffle.txt step5_shuffle.txt
