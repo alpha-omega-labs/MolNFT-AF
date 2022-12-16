@@ -9,7 +9,7 @@ rm -r xx01 xx00
 csplit step2_shuffle.txt 123456
 cat xx01 xx00 > step3_shuffle.txt
 rm -r xx01 xx00
-csplit step3_shuffle.txt NUMBER_HERE
+csplit step3_shuffle.txt 15
 cat xx01 xx00 > step4_shuffle.txt
 rm -r xx01 xx00
 csplit step4_shuffle.txt NUMBER_HERE
